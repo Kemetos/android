@@ -22,7 +22,7 @@ public class FirstFragment extends Fragment {
 
         //spinner
         languageSelector = (Spinner) v.findViewById(R.id.languageFirst);
-        String[] items = new String[]{"Francais", "Anglais", "Espagnole"};
+        String[] items = new String[]{"Francais", "Anglais", "Espagnol"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.simple_spinner, items);
         languageSelector.setAdapter(adapter);
 
