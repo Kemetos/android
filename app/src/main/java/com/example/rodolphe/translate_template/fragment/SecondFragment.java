@@ -2,6 +2,7 @@ package com.example.rodolphe.translate_template.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.rodolphe.translate_template.Adapter.RecyclerSimpleViewAdapter;
 import com.example.rodolphe.translate_template.MainActivity;
 import com.example.rodolphe.translate_template.R;
 
@@ -21,6 +23,7 @@ public class SecondFragment extends Fragment {
 
     private Spinner languageSelect;
     private RecyclerView listEmoji;
+    private RecyclerSimpleViewAdapter adapterEmoji;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,13 +36,19 @@ public class SecondFragment extends Fragment {
 
         //spinner
         languageSelect = (Spinner) v.findViewById(R.id.language);
-        String[] items = new String[]{"US", "FR", "three"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
+        String[] items = new String[]{"Francais", "Anglais", "Espagnole"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.simple_spinner, items);
         languageSelect.setAdapter(adapter);
 
         //RecyclerView
 
+        //Layout Manager
+        GridLayoutManager gridLayoutManager
+                = new GridLayoutManager(getActivity(), 3);
+
         listEmoji = (RecyclerView) v.findViewById(R.id.ListEmoji);
+
+        listEmoji.setLayoutManager(gridLayoutManager);
 
         // fill the list items
         List<String> itemslist = new ArrayList<String>();
@@ -49,10 +58,10 @@ public class SecondFragment extends Fragment {
         }
 
         //Aplly changement
-        adapter = new RecyclerViewAdapter(itemslist, android.R.layout.simple_list_item_1);
-        recyclerView.setAdapter(adapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapterEmoji = new RecyclerSimpleViewAdapter(itemslist, R.layout.grille_custom);
+        listEmoji.setAdapter(adapterEmoji);
+
 
 
         return v;

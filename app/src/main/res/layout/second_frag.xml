@@ -2,19 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
 
-    <Spinner
-        android:id="@+id/language"
+    <TextView
+        android:id="@+id/textTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="15dp"
+        android:textSize="8pt"
+        android:textAlignment="center"
+        android:background="#f5dd66"
+        android:text="Langue traduite"
+        android:textColor="#8000"/>
+    <LinearLayout
+        android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#f5dd66"
-        android:spinnerMode="dropdown" />
+        android:layout_below="@+id/textTop">
+
+        <Spinner
+            android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#f5dd66"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/search"
+        android:layout_width="315dp"
+        android:layout_height="60dp"
+        android:text="RECHERCHER UN EMOJI"
+        android:textAlignment="center"
+        android:background="#80f5dc66"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/searchLayout"
+        android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ListEmoji"
         android:scrollbars="vertical"
-        android:layout_below="@id/language"
+        android:layout_below="@id/search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
@@ -26,5 +57,6 @@
         android:layout_centerVertical="true"
         android:textSize="26dp"
         android:text="TextView" />
+
 
 </RelativeLayout>

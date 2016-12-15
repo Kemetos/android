@@ -1,11 +1,14 @@
 package com.example.rodolphe.translate_template;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.MenuItem;
 
 import com.example.rodolphe.translate_template.fragment.FirstFragment;
 import com.example.rodolphe.translate_template.fragment.SecondFragment;
@@ -13,13 +16,41 @@ import com.example.rodolphe.translate_template.fragment.ThirdFragment;
 
 public class MainActivity extends FragmentActivity {
 
+    private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        final ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+
+        //Set page to HOME
+        pager.setCurrentItem(1);
+
+        //Bind bottom navigation
+        bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int position = 0;
+
+                switch (item.getItemId()) {
+                    case R.id.action_schedules:
+                        position = 1;
+                        break;
+                    case R.id.action_music:
+                        position = 2;
+                        break;
+                }
+
+                pager.setCurrentItem(position);
+
+                return true;
+            }
+        });
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
