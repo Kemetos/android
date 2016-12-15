@@ -6,15 +6,15 @@
     android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/textTop"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingTop="15dp"
-        android:textSize="8pt"
-        android:textAlignment="center"
-        android:background="#f5dd66"
-        android:text="Langue traduite"
-        android:textColor="#8000"/>
+    android:id="@+id/textTop"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingTop="15dp"
+    android:textSize="8pt"
+    android:textAlignment="center"
+    android:background="#f5dd66"
+    android:text="Langue traduite"
+    android:textColor="#8000"/>
     <LinearLayout
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
@@ -49,14 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/tvFragSecond"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="26dp"
-        android:text="TextView" />
 
 
 </RelativeLayout>

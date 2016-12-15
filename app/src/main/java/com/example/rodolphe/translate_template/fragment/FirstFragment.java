@@ -5,18 +5,26 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.rodolphe.translate_template.R;
 
 public class FirstFragment extends Fragment {
 
+    private Spinner languageSelector;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.first_frag, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
-        tv.setText(getArguments().getString("msg"));
+        //spinner
+        languageSelector = (Spinner) v.findViewById(R.id.languageFirst);
+        String[] items = new String[]{"Francais", "Anglais", "Espagnole"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.simple_spinner, items);
+        languageSelector.setAdapter(adapter);
 
         return v;
     }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/textTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="15dp"
+        android:textSize="8pt"
+        android:textAlignment="center"
+        android:background="#f5dd66"
+        android:text="Langue traduite"
+        android:textColor="#8000"/>
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_below="@id/textTop"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="20dp"
+            android:text="ALLEMAND"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="#f5dd66"
+            android:spinnerMode="dropdown" />
+
+    <LinearLayout
+        android:id="@+id/emojiShow"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:background="#a8d5f7"
+        android:layout_below="@+id/language"
+        android:layout_alignParentStart="true">
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="" />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Nom de l'émoticon"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="25dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:paddingTop="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/emojiShow"
+        android:id="@+id/phraseOrigine"
+        android:layout_width="match_parent"
+        android:text="PHRASE D'ORIGINE"
+        android:layout_marginTop="49dp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Phrase de l'émoji ici"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@id/phraseOrigine"/>
+
+    <TextView
+        android:layout_below="@id/phraseOrigine"
+        android:id="@+id/PhraseTraduite"
+        android:layout_width="match_parent"
+        android:text="PHRASE TRADUITE"
+        android:layout_marginTop="73dp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Phrase TRADUITE ICI"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/PhraseTraduite"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView3" />
+
+
+</RelativeLayout>

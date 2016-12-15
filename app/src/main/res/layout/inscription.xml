@@ -19,44 +19,59 @@
     <LinearLayout
         android:id="@+id/background_home"
         android:layout_width="292dp"
-        android:layout_height="258dp"
+        android:layout_height="358dp"
         android:layout_marginTop="35dp"
         android:background="#80f5dc66"
         android:layout_below="@+id/intro"
         android:orientation="horizontal">
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonFb"
+    <EditText
+        android:id="@+id/prenom"
         android:layout_width="285dp"
         android:layout_height="80dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="90dp"
         android:layout_marginStart="70dp"
-        android:background="#3b5998"
-        android:text="SE CONNECTER AVEC FACEBOOK"
-        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#e8e8e8"
+        android:hint="PRENOM"
+        android:textColor="#000"
         android:layout_below="@id/intro"/>
-    <Button
-        android:id="@+id/buttonMail"
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="70dp"
+        android:hint="EMAIL"
+        android:textColor="#000"
+        android:background="#e8e8e8"
+        android:layout_below="@id/prenom"/>
+
+    <EditText
+        android:id="@+id/mot_de_passe"
         android:layout_width="285dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="70dp"
-        android:text="SE CONNECTER PAR MAIL"
-        android:textColor="#fff"
-        android:onClick="inscription"
-        android:background="#eaa330"
-        android:layout_below="@id/buttonFb"/>
+        android:textAlignment="center"
+        android:hint="MOT DE PASSE"
+        android:textColor="#000"
+        android:background="#e8e8e8"
+        android:layout_below="@id/email"/>
 
     <Button
-        android:layout_width="178dp"
-        android:layout_below="@+id/buttonMail"
-        android:background="@drawable/textlines"
-        android:text="Je n'ai pas encoer de compte !"
-        android:layout_marginTop="34dp"
-        android:textSize="9dp"
-        android:layout_marginLeft="100dp"
-        android:layout_height="25dp" />
+        android:id="@+id/confirmer"
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="70dp"
+        android:text="COMFIRMER"
+        android:textColor="#fff"
+        android:background="#000"
+        android:onClick="confirmation"
+        android:layout_below="@id/mot_de_passe"/>
 
 
 

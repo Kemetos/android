@@ -31,9 +31,6 @@ public class SecondFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.second_frag, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragSecond);
-        tv.setText(getArguments().getString("msg"));
-
         //spinner
         languageSelect = (Spinner) v.findViewById(R.id.language);
         String[] items = new String[]{"Francais", "Anglais", "Espagnole"};
